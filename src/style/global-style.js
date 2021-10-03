@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
         font-size:16px;
         color:#000;
-        /* font-family: 'Noto Sans KR', sans-serif; */
+        font-family: 'Noto Sans KR', sans-serif;
     }
     body {
         font-weight:400;

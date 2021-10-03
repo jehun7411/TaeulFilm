@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./style/global-style";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <GlobalStyle />
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
