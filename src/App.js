@@ -12,6 +12,7 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route exact path="/business" component={Business} />
       </Switch>
+      {/*테스트*/}
     </div>
   );
 }
