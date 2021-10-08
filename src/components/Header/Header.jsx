@@ -65,7 +65,7 @@ function Header() {
             <Link to="/business">사업 영역</Link>
           </HeaderItem>
           <HeaderItem>
-            <Link to="/faq">F&Q</Link>
+            <Link to="/faq">FAQ</Link>
           </HeaderItem>
         </HeaderGnb>
       </Inner>
