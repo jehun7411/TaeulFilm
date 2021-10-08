@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Inner = styled.div`
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
   /* border: 1px solid red; */
 `;
