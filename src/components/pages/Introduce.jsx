@@ -24,7 +24,7 @@ position: relative;
 background: url(${introuduce_image}) no-repeat;
 `;
 
-function Introduce() { //테스트 2번째
+function Introduce() { //테스트 2번째...
   return( 
     <div>
        <IntroduceLogo>
