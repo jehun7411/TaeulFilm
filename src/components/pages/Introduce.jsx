@@ -24,7 +24,7 @@ position: relative;
 background: url(${introuduce_image}) no-repeat;
 `;
 
-function Introduce() { //테스트 2번째...
+function Introduce() {
   return( 
     <div>
        <IntroduceLogo>
@@ -37,3 +37,5 @@ function Introduce() { //테스트 2번째...
   }
  
 export default Introduce;
+
+//dev로 KB가 Merge
