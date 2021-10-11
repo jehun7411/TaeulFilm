@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/introduce" component={Introduce} />
         <Route exact path="/product" component={Product} />
       </Switch>
-      {/*테스트*/}
+      {/*테스트..*/}
     </div>
   );
 }

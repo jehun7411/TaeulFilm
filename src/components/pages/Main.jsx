@@ -31,7 +31,7 @@ const BannerTextWrap = styled.div`
   }
 `;
 
-// 17,66
+// 17,66 ..
 
 const BannerText = styled.p`
   font-family: "Nanum Brush Script", cursive;
