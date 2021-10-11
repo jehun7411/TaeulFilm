@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import introuduce_image from "../../asset/images/introuduce_image.png";
+import Inner from "../atoms/Inner";
 const IntroduceLogo = styled.h1`
   margin-top: 50px;
   width: 100%;
@@ -27,11 +28,13 @@ background: url(${introuduce_image}) no-repeat;
 function Introduce() {
   return( 
     <div>
+      <Inner>
        <IntroduceLogo>
          <Link to="/">Taeul Film</Link>
        </IntroduceLogo>
        <IntroduceImage>
        </IntroduceImage>
+       </Inner>
     </div>
   );
   }
