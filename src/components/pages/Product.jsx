@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import introuduce_image from "../../asset/images/introuduce_image.png";
+import skckonlongpi from "../../asset/images/skckolonpi.png";
 import Inner from "../atoms/Inner";
 const ProductLogo = styled.h1`
 margin-top: 50px;
@@ -20,18 +20,20 @@ font-size: 1.875rem;
   }
 `;
   
-const IntroduceImage = styled.section`
+const ProductImage = styled.section`
 width: 100%;
 min-height: 308px;
 position: relative;
-background: url(${introuduce_image}) no-repeat;
+background: url(${skckonlongpi}) no-repeat;
 `;
 
 function Product() {
   return <div>
     <Inner>
     <ProductLogo>
-      
+      <ProductImage>
+        
+      </ProductImage>
     </ProductLogo>
     </Inner>
   </div>;
