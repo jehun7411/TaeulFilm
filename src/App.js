@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import { Business, Main, Faq, Introduce, Product } from "./components/pages";
 
 function App() {
-  //init branch
+  //dev
   return (
     <div>
       <Header />
