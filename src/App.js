@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import Header from "./components/Header/Header";
+import Futter from "./components/Futter/Futter";
 import { Business, Main, Faq, Introduce, Product } from "./components/pages";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route exact path="/introduce" component={Introduce} />
         <Route exact path="/product" component={Product} />
       </Switch>
-      {/*테스트...*/}
+      <Futter />
     </div>
   );
 }
