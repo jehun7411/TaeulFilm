@@ -24,16 +24,15 @@ const ProductImage = styled.section`
 width: 100%;
 min-height: 308px;
 position: relative;
-background: url(${skckonlongpi}) no-repeat;
+
 `;
 
 function Product() {
   return <div>
     <Inner>
-    안녕하세요!!! 안녕?
     <ProductLogo>
       <ProductImage>
-        
+      <img src={skckonlongpi} alt="ProductImage"/>
       </ProductImage>
     </ProductLogo>
     </Inner>
