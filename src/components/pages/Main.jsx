@@ -48,6 +48,7 @@ const BannerLogo = styled.strong`
 `;
 
 function Main() {
+  console.log("main");
   return (
     <div>
       <Inner>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import Inner from "../atoms/Inner";
 
@@ -47,7 +47,7 @@ const HeaderItem = styled.li`
   }
 `;
 
-function Header() {
+function Header({ pathname }) {
   return (
     <HeaderWrap>
       <Inner>
@@ -55,16 +55,16 @@ function Header() {
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
-          <HeaderItem>
+          <HeaderItem pathname={pathname}>
             <Link to="/introduce">회사 소개</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem pathname={pathname}>
             <Link to="/product">제품 소개</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem pathname={pathname}>
             <Link to="/business">사업 영역</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem pathname={pathname}>
             <Link to="/faq">FAQ</Link>
           </HeaderItem>
         </HeaderGnb>
