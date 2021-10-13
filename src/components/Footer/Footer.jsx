@@ -2,21 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import Inner from "../atoms/Inner";
 
-// const FutterLine = styled.hr`
-// size: 1;
-// margin-top: 50px;
-// width: 1200px;
-// color: 1px solid #ADB5BD;
-// transform: rotate(0.11deg);
-// `;
+const FooterOuter = styled(Inner)`
+  height: 100%;
+  border-top: 1px solid #adb5bd;
+`;
 
-const FotterInner = styled(Inner)`
+const FooterInner = styled(Inner)`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 860px;
   height: 100%;
-  border-top: 1px solid #adb5bd;
   position: relative;
 `;
 
@@ -47,19 +43,21 @@ const FutterText = styled.p`
 function Futter() {
   return (
     <FutterTextWrap>
-      <FotterInner>
-        <FutterLogo>Taeul Film</FutterLogo>
-        <FooterInfo>
-          <FutterText>
-            태을필름 / 주소 : 경기도 군포시 번영로 505 1142-2 대우 디오플러스
-            1603호
-          </FutterText>
-          <FutterText>사업자등록번호 : 000-00-00000 대표 : 오홍백</FutterText>
-          <FutterText>
-            연락처 : 010 - 0000 - 0000 / FAX. 000)123 - 4567
-          </FutterText>
-        </FooterInfo>
-      </FotterInner>
+      <FooterOuter>
+        <FooterInner>
+          <FutterLogo>Taeul Film</FutterLogo>
+          <FooterInfo>
+            <FutterText>
+              태을필름 / 주소 : 경기도 군포시 번영로 505 1142-2 대우 디오플러스
+              1603호
+            </FutterText>
+            <FutterText>사업자등록번호 : 000-00-00000 대표 : 오홍백</FutterText>
+            <FutterText>
+              연락처 : 010 - 0000 - 0000 / FAX. 000)123 - 4567
+            </FutterText>
+          </FooterInfo>
+        </FooterInner>
+      </FooterOuter>
     </FutterTextWrap>
   );
 }
