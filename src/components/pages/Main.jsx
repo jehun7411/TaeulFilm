@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Inner from "../atoms/Inner";
 import bannerImage from "../../asset/images/main_banner.png";
+import MainProduct from "../Main/MainProduct";
+import MainMap from "../Main/MainMap";
 
 const Banner = styled.section`
   margin-top: 50px;
@@ -31,8 +33,6 @@ const BannerTextWrap = styled.div`
   }
 `;
 
-// 17,66 ..
-
 const BannerText = styled.p`
   font-family: "Nanum Brush Script", cursive;
   font-size: 1.375rem;
@@ -48,6 +48,7 @@ const BannerLogo = styled.strong`
 `;
 
 function Main() {
+  console.log("main");
   return (
     <div>
       <Inner>
@@ -60,6 +61,8 @@ function Main() {
             <BannerText>최상의 필름을 제공할 것을 약속드립니다</BannerText>
           </BannerTextWrap>
         </Banner>
+        <MainProduct />
+        <MainMap />
       </Inner>
     </div>
   );

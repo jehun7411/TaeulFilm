@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import styled, { css } from "styled-components";
 import Inner from "../atoms/Inner";
 
 const gnbHeight = 50;
@@ -25,7 +25,6 @@ const HeaderGnb = styled.ul`
   //리스트인데 순서가 정의되어있지않은 리스트 / ol은 숫자가 매겨져있어서 순서가 정해져있음
   display: flex;
   justify-content: space-around;
-  background-color: #343a40;
   height: ${gnbHeight}px; //template literal
 `;
 
@@ -45,26 +44,76 @@ const HeaderItem = styled.li`
       background-color: #868e96;
     }
   }
+  background-color: #343a40;
+  ${({ navState }) => {
+    const { introduce, product, business, faq } = navState;
+    if (introduce)
+      return css`
+        &:first-of-type {
+          background-color: #868e96;
+        }
+      `;
+    else if (product)
+      return css`
+        &:nth-child(2) {
+          background-color: #868e96;
+        }
+      `;
+    else if (business)
+      return css`
+        &:nth-child(3) {
+          background-color: #868e96;
+        }
+      `;
+    else if (faq)
+      return css`
+        &:nth-child(4) {
+          background-color: #868e96;
+        }
+      `;
+    else
+      return css`
+        background-color: #343a40;
+      `;
+  }}
 `;
 
 function Header() {
+  const history = useHistory();
+  const navInit = {
+    introduce: false,
+    product: false,
+    business: false,
+    faq: false,
+  };
+  const [navState, setNavState] = useState(navInit);
+
+  const onClick = (present) =>
+    setNavState(() => ({ ...navInit, [present]: true }));
+
+  const fliterPath = history.location.pathname.replace("/", "");
+
+  useEffect(() => {
+    setNavState({ ...navInit, [fliterPath]: true });
+  }, []);
+
   return (
     <HeaderWrap>
       <Inner>
-        <HeaderLogo>
+        <HeaderLogo onClick={onClick}>
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
-          <HeaderItem>
+          <HeaderItem onClick={() => onClick("introduce")} navState={navState}>
             <Link to="/introduce">회사 소개</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem onClick={() => onClick("product")} navState={navState}>
             <Link to="/product">제품 소개</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem onClick={() => onClick("business")} navState={navState}>
             <Link to="/business">사업 영역</Link>
           </HeaderItem>
-          <HeaderItem>
+          <HeaderItem onClick={() => onClick("faq")} navState={navState}>
             <Link to="/faq">FAQ</Link>
           </HeaderItem>
         </HeaderGnb>

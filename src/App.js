@@ -1,11 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import Header from "./components/Header/Header";
-import Futter from "./components/Futter/Futter";
+import Footer from "./components/Footer/Footer";
 import { Business, Main, Faq, Introduce, Product } from "./components/pages";
 
 function App() {
-  //dev
   return (
     <div>
       <Header />
@@ -16,7 +15,7 @@ function App() {
         <Route exact path="/introduce" component={Introduce} />
         <Route exact path="/product" component={Product} />
       </Switch>
-      <Futter />
+      <Footer />
     </div>
   );
 }
