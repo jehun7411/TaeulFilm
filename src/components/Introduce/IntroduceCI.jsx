@@ -101,9 +101,9 @@ function IntroduceCI() {
               <br />
             </CIText1>
             <CIText2>
-              자격증 및 온라인 강의 수강
+              주마다 갖는 회의와 자유로운 분위기
               <br />
-              비용 및 시간 적극 지원
+              에서의 아이디어 창출 및 팀워크 상승
             </CIText2>
           </CITextWrap>
         </CIIconWrap>
