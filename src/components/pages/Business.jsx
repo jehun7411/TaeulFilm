@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Inner from "../atoms/Inner";
 import SemiInner from "../atoms/SemiInner";
 import business from "../../asset/images/business.png";
+import PIfilmStatistics from "../../asset/images/PIfilmStatistics.png";
 import Title from "../atoms/Title";
 
 const BusinessSection = styled.section`
@@ -15,6 +16,12 @@ const BusinessImage = styled.img``;
 
 const BusinessImgWrap = styled.div`
   width: 50%;
+`;
+const BusinessImgWrap2 = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
 `;
 
 const BusinessTextWrap = styled.div`
@@ -35,6 +42,15 @@ const BusinessText = styled.p`
   }
 `;
 
+const StatisticsBoxWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+`;
+const StatisticsText = styled.span`
+  font-size: 1.25rem;
+`;
 function Business() {
   return (
     <Inner>
@@ -67,6 +83,12 @@ function Business() {
             </BusinessText>
           </BusinessTextWrap>
         </BusinessSection>
+        <BusinessImgWrap2>
+          <BusinessImage src={PIfilmStatistics} alt="PIfilmStatistics" />
+        </BusinessImgWrap2>
+        <StatisticsBoxWrap>
+          <StatisticsText>PI필름 전망</StatisticsText>
+        </StatisticsBoxWrap>
       </SemiInner>
     </Inner>
   );
