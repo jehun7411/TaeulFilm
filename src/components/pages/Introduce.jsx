@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import introuduceImage from "../../asset/images/introuduce_image.png";
 import Inner from "../atoms/Inner";
 import SemiInner from "../atoms/SemiInner";
+import IntroduceCI from "../Introduce/IntroduceCI";
 
 const IntroduceLogo = styled.h1`
   margin-top: 50px;
@@ -96,6 +97,7 @@ function Introduce() {
               <CeoTextWrap>대표 오홍백</CeoTextWrap>
             </IntroduceTextWrap>
           </IntroduceWrap>
+          <IntroduceCI />
         </SemiInner>
       </Inner>
     </div>
@@ -103,5 +105,3 @@ function Introduce() {
 }
 
 export default Introduce;
-
-//dev로 KB가 Merge
