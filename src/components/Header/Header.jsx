@@ -95,7 +95,7 @@ function Header() {
 
   useEffect(() => {
     setNavState({ ...navInit, [fliterPath]: true });
-  }, []);
+  }, [setNavState]);
 
   return (
     <HeaderWrap>
