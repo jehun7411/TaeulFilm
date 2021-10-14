@@ -56,7 +56,6 @@ const CeoTextWrap = styled.p`
   font-size: 0.9375rem;
   text-align: center;
 `;
-
 function Introduce() {
   return (
     <div>
