@@ -28,17 +28,16 @@ const BusinessTextWrap = styled.div`
   width: 50%;
   padding-top: 9px;
   padding-left: 62px;
-  font-style: normal;
 `;
 const BusinessText = styled.p`
   &:nth-child(odd) {
-    padding-bottom: 45px;
     font-size: 1.5625rem;
+    padding-bottom: 42px;
   }
   &:nth-child(even) {
     font-size: 1.25rem;
-    line-height: 1.5rem;
-    padding-bottom: 45px;
+    line-height: 1.81rem;
+    padding-bottom: 42px;
   }
 `;
 
