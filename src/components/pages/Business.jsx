@@ -9,13 +9,17 @@ import Title from "../atoms/Title";
 const BusinessSection = styled.section`
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10.1785%;
   position: relative;
+  & > div:nth-child(2) {
+    margin-bottom: 100px;
+  }
 `;
 const BusinessImage = styled.img``;
 
 const BusinessImgWrap = styled.div`
-  width: 50%;
+  width: 40%;
 `;
 const BusinessImgWrap2 = styled.div`
   display: flex;
@@ -25,31 +29,20 @@ const BusinessImgWrap2 = styled.div`
 `;
 
 const BusinessTextWrap = styled.div`
-  width: 50%;
+  width: 40%;
   padding-top: 9px;
-  padding-left: 62px;
 `;
 const BusinessText = styled.p`
   &:nth-child(odd) {
-    font-size: 1.5625rem;
-    padding-bottom: 42px;
+    font-size: 1.25rem;
+    padding-bottom: 37px;
   }
   &:nth-child(even) {
-    font-size: 1.25rem;
-    line-height: 1.81rem;
-    padding-bottom: 42px;
+    line-height: 1.25rem;
+    padding-bottom: 37px;
   }
 `;
 
-const StatisticsBoxWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-`;
-const StatisticsText = styled.span`
-  font-size: 1.25rem;
-`;
 function Business() {
   return (
     <Inner>
@@ -82,12 +75,10 @@ function Business() {
             </BusinessText>
           </BusinessTextWrap>
         </BusinessSection>
+        <Title>PI 필름 전망</Title>
         <BusinessImgWrap2>
           <BusinessImage src={PIfilmStatistics} alt="PIfilmStatistics" />
         </BusinessImgWrap2>
-        <StatisticsBoxWrap>
-          <StatisticsText>PI필름 전망</StatisticsText>
-        </StatisticsBoxWrap>
       </SemiInner>
     </Inner>
   );
