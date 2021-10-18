@@ -21,14 +21,11 @@ const InfoBar = styled.div`
 const InfoNumber = styled.p`
   text-align: left;
   position: absolute;
-  padding-top: 12px;
-  padding-bottom: 15px;
-  padding-left: 33px;
+  padding: 12px 0px 15px 33px;
 `;
 const Question = styled.p`
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 15px;
+  padding: 12px 0px 15px 0px;
 `;
 const EditButton = styled.button`
   margin-top: 10px;

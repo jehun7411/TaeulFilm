@@ -4,11 +4,10 @@ import { faqList } from "./FaqList";
 const Number = styled.p`
   text-align: left;
   position: absolute;
-  padding-top: 12px;
-  padding-bottom: 15px;
-  padding-left: 33px;
+  padding: 12px 0px 15px 43px;
+  /* padding-bottom: 15px;
+  padding-left: 33px; */
   font-size: 1.125rem;
-  /* padding-left: 33px; */
 `;
 // const NumberWrap = styled.div`
 //   width: 7.6667%;
@@ -18,8 +17,7 @@ const Number = styled.p`
 // `;
 const QuestionText = styled.p`
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 15px;
+  padding: 12px 0px 15px 0px;
 `;
 // const QuestionTextWrap = styled.div`
 //   width: 100%;
