@@ -29,7 +29,6 @@ function Product() {
   return (
     <div>
       <Inner>
-        안녕하세요!!!
         <ProductLogo>
           <ProductImage></ProductImage>
         </ProductLogo>
