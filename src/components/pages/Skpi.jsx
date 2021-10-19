@@ -1,27 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
+import queryString from "query-string";
 import Inner from "../atoms/Inner";
 import Title from "../atoms/Title";
 import ProductImg from "../atoms/ProductImg";
-import skckonlonpi from "../../asset/images/skckolonpi.png";
 import List from "../atoms/List";
+import SemiInner from "../atoms/SemiInner";
+import filmItem from "../../asset/filmItem/filmItem";
 
-const SmallInner = styled.div`
-  width: 1200px;
-  height: 685px;
-  margin-top: 60px;
-  padding-bottom: 60px;
-  border: 1px solid blue;
+const FilmSemiInner = styled(SemiInner)`
+  margin: 60px auto 0;
 `;
 
 const ProTitleGap = styled.section`
-  margin-top: 30px;
-  margin-bottom: 99px;
+  margin: 30px 0 99px;
 `;
 
 const ProPictureGap = styled.section`
-  margin-left: 147px;
   display: flex;
 `;
 
@@ -32,9 +29,14 @@ const ProductTextWrap = styled.div`
 `;
 
 const ProductText = styled.p`
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.5rem;
   margin-left: 30px;
+`;
+
+const ProductImgWrap = styled.div`
+  width: 50%;
+  text-align: center;
 `;
 
 const Detail = styled.p`
@@ -43,40 +45,43 @@ const Detail = styled.p`
   text-align: center;
 `;
 const TextWrap = styled.div`
-  width: 600px;
+  width: 50%;
   display: flex;
-  gap: 96px;
-  margin-left: 80px;
+  justify-content: space-between;
   margin-top: 61px;
 `;
 
 function Skpi() {
+  const history = useHistory();
+  const { search } = history.location;
+  const query = queryString.parse(search);
+  const filmState = filmItem.filter((item) => item.no === Number(query.no));
+  const { area, prop, image, subTitle, name } = filmState[0];
   return (
     <Inner>
-      <SmallInner>
+      <FilmSemiInner>
         <ProTitleGap>
-          <Title>SKCKOLON 필름</Title>
+          <Title>{subTitle}</Title>
         </ProTitleGap>
         <ProPictureGap>
-          <ProductImg src={skckonlonpi} alt="ProductImg" />
+          <ProductImgWrap>
+            <ProductImg src={image} alt={name} />
+          </ProductImgWrap>
           <TextWrap>
             <ProductTextWrap>
               <Detail>특성</Detail>
               <ProductText>
-                <li>최고의 내한성 : -270℃</li>
-                <li>최고의 내열성 : 400℃</li>
-                <li>공급가능 최저두께 : 7.5㎛</li>
-                <li>공급가능 최고두께 : 75㎛</li>
+                {prop?.map((item) => (
+                  <li>{item}</li>
+                ))}
               </ProductText>
             </ProductTextWrap>
             <ProductTextWrap>
               <Detail>적용 분야</Detail>
               <ProductText>
-                <li>FPCB 기재</li>
-                <li>FPCB Coverlay 필름</li>
-                <li>COF(Chip on Film) 기재</li>
-                <li>고온에 소각후 방열시트로 사용</li>
-                <li>Drive IC</li>
+                {area?.map((item) => (
+                  <li>{item}</li>
+                ))}
               </ProductText>
             </ProductTextWrap>
           </TextWrap>
@@ -84,7 +89,7 @@ function Skpi() {
         <Link to="Product">
           <List>목록으로</List>
         </Link>
-      </SmallInner>
+      </FilmSemiInner>
     </Inner>
   );
 }
