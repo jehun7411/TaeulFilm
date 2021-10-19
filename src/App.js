@@ -11,6 +11,7 @@ import {
   FaqEditPage,
   FaqPreviewPage,
 } from "./components/pages";
+  Skpi,
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/introduce" component={Introduce} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/FaqPreviewPage" component={FaqPreviewPage} />
+        <Route exact path="/detail" component={Skpi} />
       </Switch>
       <Footer />
     </div>
