@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProductImg from "../atoms/ProductImg";
+import filmItem from "../../asset/filmItem/filmItem";
 
 const ListImgWrap = styled.div`
   width: 50%;
 `;
 
 const ProductTextWrap = styled.p`
-  width: 50%;
   text-align: center;
 `;
 
@@ -33,9 +33,21 @@ const ProductDetailItem = styled.div`
     margin: 30px auto;
   }
 `;
+const ProductName = styled.p`
+  padding: 50px 0 60px 0;
+  font-size: 1.25rem;
+`;
+const ProductDetail = styled.p`
+  line-height: 1.1875rem;
+`;
+const ProductDetailWrap = styled.div`
+  width: 50%;
+  text-align: center;
+`;
 
-function ProductItem({ imageLink, no }) {
+function ProductItem({ imageLink, no, subTitle, subDetail }) {
   const filterNo = Number(no.replace("no=", ""));
+
   return (
     <ProductDetailItem>
       <Link to={{ pathname: "/detail", search: no }}>
@@ -45,11 +57,21 @@ function ProductItem({ imageLink, no }) {
               <ListImgWrap>
                 <ProductImg src={imageLink} alt="ProductImg" />
               </ListImgWrap>
-              <ProductTextWrap>안녕하세요!!</ProductTextWrap>
+              <ProductDetailWrap>
+                <ProductTextWrap>
+                  <ProductName>{subTitle}</ProductName>
+                  <ProductDetail>{subDetail}</ProductDetail>
+                </ProductTextWrap>
+              </ProductDetailWrap>
             </>
           ) : (
             <>
-              <ProductTextWrap>ㅎㅇ</ProductTextWrap>
+              <ProductDetailWrap>
+                <ProductTextWrap>
+                  <ProductName>{subTitle}</ProductName>
+                  <ProductDetail>{subDetail}</ProductDetail>
+                </ProductTextWrap>
+              </ProductDetailWrap>
               <ListImgWrap>
                 <ProductImg src={imageLink} alt="ProductImg" />
               </ListImgWrap>

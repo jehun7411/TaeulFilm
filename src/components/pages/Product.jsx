@@ -14,12 +14,19 @@ function Product() {
     <Inner>
       <ProductInner>
         {filmItem.map((item) => {
-          const { image, no } = item;
+          const { image, no, subDetail, subTitle } = item;
           const queryElement = { no };
           const queryMatter = Object.entries(queryElement)
             .map((e) => e.join("="))
             .join("&");
-          return <ProductItem imageLink={image} no={queryMatter} />;
+          return (
+            <ProductItem
+              imageLink={image}
+              no={queryMatter}
+              subTitle={subTitle}
+              subDetail={subDetail}
+            />
+          );
         })}
       </ProductInner>
     </Inner>
