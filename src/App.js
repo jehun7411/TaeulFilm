@@ -10,8 +10,8 @@ import {
   Faq,
   FaqEditPage,
   FaqPreviewPage,
-} from "./components/pages";
   Skpi,
+} from "./components/pages";
 function App() {
   return (
     <div>

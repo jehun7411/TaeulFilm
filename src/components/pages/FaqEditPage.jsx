@@ -27,7 +27,7 @@ const WriteTitleBox = styled.input`
   height: 35px;
 `;
 
-const WriteContentBox = styled.input`
+const WriteContentBox = styled.textarea`
   width: 95.8333%;
   height: 800px;
   margin-top: 20px;
