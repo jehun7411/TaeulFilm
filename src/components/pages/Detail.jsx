@@ -4,18 +4,32 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import queryString from "query-string";
 import Inner from "../atoms/Inner";
-import Title from "../atoms/Title";
+
 import ProductImg from "../atoms/ProductImg";
 import List from "../atoms/List";
 import SemiInner from "../atoms/SemiInner";
 import filmItem from "../../asset/filmItem/filmItem";
 
 const FilmSemiInner = styled(SemiInner)`
-  margin: 60px auto 0;
+  margin: 90px auto 0;
 `;
 
+const Title = styled.div`
+  width: 308px;
+  height: 55px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 50px;
+  background-color: #e9ecef;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+`;
+
+const Litag = styled.li``;
+
 const ProTitleGap = styled.section`
-  margin: 30px 0 99px;
+  margin: 0 0 99px;
 `;
 
 const ProPictureGap = styled.section`
@@ -24,8 +38,7 @@ const ProPictureGap = styled.section`
 
 const ProductTextWrap = styled.div`
   width: 46%;
-  padding-top: 28px;
-  font-style: normal;
+  padding-top: 5px;
 `;
 
 const ProductText = styled.p`
@@ -39,8 +52,8 @@ const ProductImgWrap = styled.div`
   text-align: center;
 `;
 
-const Detail = styled.p`
-  font-size: 20px;
+const SemiDetail = styled.p`
+  font-size: 1.25rem;
   margin-bottom: 23px;
   text-align: center;
 `;
@@ -51,7 +64,7 @@ const TextWrap = styled.div`
   margin-top: 61px;
 `;
 
-function Skpi() {
+function Detail() {
   const history = useHistory();
   const { search } = history.location;
   const query = queryString.parse(search);
@@ -69,18 +82,18 @@ function Skpi() {
           </ProductImgWrap>
           <TextWrap>
             <ProductTextWrap>
-              <Detail>특성</Detail>
+              <SemiDetail>특성</SemiDetail>
               <ProductText>
                 {prop?.map((item) => (
-                  <li>{item}</li>
+                  <Litag>{item}</Litag>
                 ))}
               </ProductText>
             </ProductTextWrap>
             <ProductTextWrap>
-              <Detail>적용 분야</Detail>
+              <SemiDetail>적용 분야</SemiDetail>
               <ProductText>
                 {area?.map((item) => (
-                  <li>{item}</li>
+                  <Litag>{item}</Litag>
                 ))}
               </ProductText>
             </ProductTextWrap>
@@ -94,4 +107,4 @@ function Skpi() {
   );
 }
 
-export default Skpi;
+export default Detail;

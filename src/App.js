@@ -10,6 +10,7 @@ import {
   Faq,
   FaqEditPage,
   FaqPreviewPage,
+  Detail,
 } from "./components/pages";
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/introduce" component={Introduce} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/FaqPreviewPage" component={FaqPreviewPage} />
+        <Route exact path="/detail" component={Detail} />
       </Switch>
       <Footer />
     </div>
