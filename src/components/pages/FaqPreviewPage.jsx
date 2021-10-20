@@ -50,6 +50,7 @@ const ListButton = styled.button`
   height: 40px;
   margin-top: 10px;
   background: #dee2e6;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const ListButtonWrap = styled.div`

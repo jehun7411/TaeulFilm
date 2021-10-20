@@ -32,6 +32,7 @@ const EditButton = styled.button`
   width: 9%;
   height: 40px;
   background-color: #dee2e6;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const FaqButtonWrap = styled.div`
