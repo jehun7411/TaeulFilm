@@ -2,12 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Inner from "../atoms/Inner";
 
-
 const FooterOuter = styled(Inner)`
   height: 100%;
   border-top: 1px solid #adb5bd;
 `;
-
 
 const FooterInner = styled(Inner)`
   display: flex;
@@ -44,7 +42,6 @@ const FooterText = styled.p`
 `;
 function Footer() {
   return (
-
     <FooterTextWrap>
       <FooterOuter>
         <FooterInner>
@@ -62,7 +59,6 @@ function Footer() {
         </FooterInner>
       </FooterOuter>
     </FooterTextWrap>
-
   );
 }
 

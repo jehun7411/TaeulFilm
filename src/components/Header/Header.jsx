@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled, { css } from "styled-components";
 import Inner from "../atoms/Inner";
+import { Film } from "../Film";
 
 const gnbHeight = 50;
 
 const HeaderWrap = styled.header``;
+
+const HeaderInner = styled(Inner)`
+  position: relative;
+`;
 const HeaderLogo = styled.h1`
   width: 100%;
   height: 120px;
@@ -46,28 +51,34 @@ const HeaderItem = styled.li`
   }
   background-color: #343a40;
   ${({ navState }) => {
-    const { introduce, product, business, faq } = navState;
-    if (introduce)
+    const { home, introduce, product, business, faq } = navState;
+    if (home)
       return css`
         &:first-of-type {
           background-color: #868e96;
         }
       `;
-    else if (product)
+    else if (introduce)
       return css`
         &:nth-child(2) {
           background-color: #868e96;
         }
       `;
-    else if (business)
+    else if (product)
       return css`
         &:nth-child(3) {
           background-color: #868e96;
         }
       `;
-    else if (faq)
+    else if (business)
       return css`
         &:nth-child(4) {
+          background-color: #868e96;
+        }
+      `;
+    else if (faq)
+      return css`
+        &:nth-child(5) {
           background-color: #868e96;
         }
       `;
@@ -81,6 +92,7 @@ const HeaderItem = styled.li`
 function Header() {
   const history = useHistory();
   const navInit = {
+    home: false,
     introduce: false,
     product: false,
     business: false,
@@ -99,11 +111,15 @@ function Header() {
 
   return (
     <HeaderWrap>
-      <Inner>
+      <HeaderInner>
+        <Film />
         <HeaderLogo onClick={onClick}>
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
+          <HeaderItem onClick={() => onClick()} navState={navState}>
+            <Link to="/">홈</Link>
+          </HeaderItem>
           <HeaderItem onClick={() => onClick("introduce")} navState={navState}>
             <Link to="/introduce">회사 소개</Link>
           </HeaderItem>
@@ -117,7 +133,7 @@ function Header() {
             <Link to="/faq">FAQ</Link>
           </HeaderItem>
         </HeaderGnb>
-      </Inner>
+      </HeaderInner>
     </HeaderWrap>
   );
 }
