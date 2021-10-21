@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { filmColor } from "../../asset/FilmColor/FilmColor";
+import { filmColor } from "../../asset/filmColor/filmColor";
 
 const FilmTapeList = styled.ul`
   margin-top: 3px;
@@ -31,18 +31,17 @@ const FilmTapeEmptyItem = styled.div`
   background-color: #fff;
 `;
 
-const FilmTapeColor = styled.div`
+const FilmTapeColor = styled.button`
   width: 53.3333%;
   height: 37px;
   background-color: #${({ color }) => color};
 `;
 
-function FilmTape() {
+function FilmTape({ onColorChange }) {
   return (
     <FilmTapeList>
       {filmColor.map((value) => {
         const { no, color } = value;
-        console.log(color);
         return (
           <FilmTapeItem key={no}>
             <FilmTapeEmptyWrap>
@@ -50,7 +49,7 @@ function FilmTape() {
               <FilmTapeEmptyItem />
               <FilmTapeEmptyItem />
             </FilmTapeEmptyWrap>
-            <FilmTapeColor color={color} />
+            <FilmTapeColor color={color[0]} onClick={onColorChange} name={no} />
             <FilmTapeEmptyWrap>
               <FilmTapeEmptyItem />
               <FilmTapeEmptyItem />

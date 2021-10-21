@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { filmColor } from "../../asset/filmColor/filmColor";
 import Inner from "../atoms/Inner";
 import { Film } from "../Film";
 
@@ -39,52 +40,61 @@ const HeaderItem = styled.li`
   color: #eee;
   line-height: ${gnbHeight}px;
   font-size: 1.25rem;
-
   & a {
     display: block;
     text-align: center;
     transition: ease-in-out 0.3s all;
-
-    &:hover {
-      background-color: #868e96;
-    }
   }
-  background-color: #343a40;
-  ${({ navState }) => {
+
+  ${({ themeColor }) => {
+    const [mainColor, semiColor] = themeColor;
+    return css`
+    & a {
+      &:hover {
+        background-color: #${semiColor}};
+      }
+    }
+    background-color: #${mainColor};
+  `;
+  }}
+
+  ${({ navState, themeColor }) => {
+    const [mainColor, semiColor] = themeColor;
     const { home, introduce, product, business, faq } = navState;
+
     if (home)
       return css`
         &:first-of-type {
-          background-color: #868e96;
+          background-color: #${semiColor};
         }
       `;
     else if (introduce)
       return css`
         &:nth-child(2) {
-          background-color: #868e96;
+          background-color: #${semiColor};
         }
       `;
     else if (product)
       return css`
         &:nth-child(3) {
-          background-color: #868e96;
+          background-color: #${semiColor};
         }
       `;
     else if (business)
       return css`
         &:nth-child(4) {
-          background-color: #868e96;
+          background-color: #${semiColor};
         }
       `;
     else if (faq)
       return css`
         &:nth-child(5) {
-          background-color: #868e96;
+          background-color: #${semiColor};
         }
       `;
     else
       return css`
-        background-color: #343a40;
+        background-color: ${mainColor};
       `;
   }}
 `;
@@ -99,9 +109,18 @@ function Header() {
     faq: false,
   };
   const [navState, setNavState] = useState(navInit);
-
+  const [currentColor, setCurrentColor] = useState(["343a40", "868e96"]);
   const onClick = (present) =>
     setNavState(() => ({ ...navInit, [present]: true }));
+
+  const onColorChange = (e) => {
+    const currentIndex = e.target.name;
+    const targetColor = filmColor.filter(
+      (value) => value.no === Number(currentIndex)
+    );
+    const { color } = targetColor[0];
+    setCurrentColor(color);
+  };
 
   const fliterPath = history.location.pathname.replace("/", "");
 
@@ -112,24 +131,44 @@ function Header() {
   return (
     <HeaderWrap>
       <HeaderInner>
-        <Film />
+        <Film onColorChange={onColorChange} />
         <HeaderLogo onClick={onClick}>
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
-          <HeaderItem onClick={() => onClick()} navState={navState}>
+          <HeaderItem
+            onClick={() => onClick()}
+            navState={navState}
+            themeColor={currentColor}
+          >
             <Link to="/">홈</Link>
           </HeaderItem>
-          <HeaderItem onClick={() => onClick("introduce")} navState={navState}>
+          <HeaderItem
+            onClick={() => onClick("introduce")}
+            navState={navState}
+            themeColor={currentColor}
+          >
             <Link to="/introduce">회사 소개</Link>
           </HeaderItem>
-          <HeaderItem onClick={() => onClick("product")} navState={navState}>
+          <HeaderItem
+            onClick={() => onClick("product")}
+            navState={navState}
+            themeColor={currentColor}
+          >
             <Link to="/product">제품 소개</Link>
           </HeaderItem>
-          <HeaderItem onClick={() => onClick("business")} navState={navState}>
+          <HeaderItem
+            onClick={() => onClick("business")}
+            navState={navState}
+            themeColor={currentColor}
+          >
             <Link to="/business">사업 영역</Link>
           </HeaderItem>
-          <HeaderItem onClick={() => onClick("faq")} navState={navState}>
+          <HeaderItem
+            onClick={() => onClick("faq")}
+            navState={navState}
+            themeColor={currentColor}
+          >
             <Link to="/faq">FAQ</Link>
           </HeaderItem>
         </HeaderGnb>
