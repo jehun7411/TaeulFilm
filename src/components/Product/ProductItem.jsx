@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProductImg from "../atoms/ProductImg";
-import filmItem from "../../asset/filmItem/filmItem";
 
 const ListImgWrap = styled.div`
   width: 50%;
 `;
 
 const ProductTextWrap = styled.p`
+  width: 50%;
   text-align: center;
 `;
 
@@ -23,7 +23,6 @@ const ProductDetailItem = styled.div`
       text-align: right;
     }
   }
-
   &:not(:last-child)::after {
     content: "";
     display: block;
@@ -33,21 +32,9 @@ const ProductDetailItem = styled.div`
     margin: 30px auto;
   }
 `;
-const ProductName = styled.p`
-  padding: 50px 0 60px 0;
-  font-size: 1.25rem;
-`;
-const ProductDetail = styled.p`
-  line-height: 1.1875rem;
-`;
-const ProductDetailWrap = styled.div`
-  width: 50%;
-  text-align: center;
-`;
 
-function ProductItem({ imageLink, no, subTitle, subDetail }) {
+function ProductItem({ imageLink, no }) {
   const filterNo = Number(no.replace("no=", ""));
-
   return (
     <ProductDetailItem>
       <Link to={{ pathname: "/detail", search: no }}>
@@ -57,21 +44,11 @@ function ProductItem({ imageLink, no, subTitle, subDetail }) {
               <ListImgWrap>
                 <ProductImg src={imageLink} alt="ProductImg" />
               </ListImgWrap>
-              <ProductDetailWrap>
-                <ProductTextWrap>
-                  <ProductName>{subTitle}</ProductName>
-                  <ProductDetail>{subDetail}</ProductDetail>
-                </ProductTextWrap>
-              </ProductDetailWrap>
+              <ProductTextWrap>안녕하세요!!</ProductTextWrap>
             </>
           ) : (
             <>
-              <ProductDetailWrap>
-                <ProductTextWrap>
-                  <ProductName>{subTitle}</ProductName>
-                  <ProductDetail>{subDetail}</ProductDetail>
-                </ProductTextWrap>
-              </ProductDetailWrap>
+              <ProductTextWrap>하이하이</ProductTextWrap>
               <ListImgWrap>
                 <ProductImg src={imageLink} alt="ProductImg" />
               </ListImgWrap>
