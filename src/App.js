@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router";
+import firebase, { firestore } from "./util/api/fbInstance";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import {
@@ -13,6 +14,7 @@ import {
   Detail,
 } from "./components/pages";
 function App() {
+  console.log(firebase, firestore);
   return (
     <div>
       <Header />

@@ -1,6 +1,7 @@
 import React from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
+import { firestore } from "../../util/api/fbInstance";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
@@ -56,6 +57,20 @@ const EditFinishButtonWrap = styled.div`
   text-align: right;
 `;
 function FaqEditPage() {
+  //힌트 useState or useReducer + onChnage(내장) or onSubmit(커스텀)이용
+  //1. useReducer or useState로 상태관리할 것을 만듬( 타입은 원하는거 )
+  //2. onSubmit이 될때! WriteTitleBox, WriteCOntentBox에 있는 값을 State에 저장
+  //3. state에 있는 값을 firestore add안에 할당
+  //4. 작성이 잘되었는지 firebase cloud firestore에 가서 확인 후 faq에서 출력
+  console.log(firestore);
+  const fetchWrite = async () => {
+    await firestore.collection("faq").add({ list: "태을필름" });
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    fetchWrite();
+    alert("작성 완료!");
+  };
   return (
     <Inner>
       <FaqTitle>FAQ</FaqTitle>
@@ -68,7 +83,7 @@ function FaqEditPage() {
         <WriteContentBox />
       </WriteContetWrap>
       <EditFinishButtonWrap>
-        <EditFinishButton>글작성</EditFinishButton>
+        <EditFinishButton onClick={onSubmit}>글작성</EditFinishButton>
       </EditFinishButtonWrap>
     </Inner>
   );

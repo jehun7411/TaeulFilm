@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Inner from "../atoms/Inner";
 import { Link } from "react-router-dom";
 import FaqQuestion from "../Faq/FaqQuestion";
 import LeftArrow from "../../asset/images/LeftArrow.png";
 import RightArrow from "../../asset/images/RightArrow.png";
+import firebase, { firestore } from "../../util/api/fbInstance";
+
 const FaqSection = styled.div`
   margin-top: 50px;
   border-bottom: 1px solid #adb5bd;
@@ -62,6 +64,16 @@ const Arrow = styled.div`
   }}
 `;
 function Faq() {
+  const fetchData = async () => {
+    const tt = await firestore.collection("faq").get();
+
+    tt.forEach((doc) => console.log(doc.data()));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   return (
     <Inner>
       <FaqSection>
