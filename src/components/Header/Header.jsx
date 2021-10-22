@@ -28,14 +28,12 @@ const HeaderLogo = styled.h1`
 `;
 
 const HeaderGnb = styled.ul`
-  //리스트인데 순서가 정의되어있지않은 리스트 / ol은 숫자가 매겨져있어서 순서가 정해져있음
   display: flex;
   justify-content: space-around;
   height: ${gnbHeight}px; //template literal
 `;
 
 const HeaderItem = styled.li`
-  // li(list item)
   width: 25%;
   color: #eee;
   line-height: ${gnbHeight}px;
