@@ -25,7 +25,6 @@ const ProPictureGap = styled.section`
 const ProductTextWrap = styled.div`
   width: 46%;
   padding-top: 28px;
-  font-style: normal;
 `;
 
 const ProductText = styled.p`
@@ -39,8 +38,8 @@ const ProductImgWrap = styled.div`
   text-align: center;
 `;
 
-const Detail = styled.p`
-  font-size: 20px;
+const DetailInfo = styled.p`
+  font-size: 1.25rem;
   margin-bottom: 23px;
   text-align: center;
 `;
@@ -51,7 +50,7 @@ const TextWrap = styled.div`
   margin-top: 61px;
 `;
 
-function Skpi() {
+function Detail() {
   const history = useHistory();
   const { search } = history.location;
   const query = queryString.parse(search);
@@ -69,7 +68,7 @@ function Skpi() {
           </ProductImgWrap>
           <TextWrap>
             <ProductTextWrap>
-              <Detail>특성</Detail>
+              <DetailInfo>특성</DetailInfo>
               <ProductText>
                 {prop?.map((item) => (
                   <li>{item}</li>
@@ -77,7 +76,7 @@ function Skpi() {
               </ProductText>
             </ProductTextWrap>
             <ProductTextWrap>
-              <Detail>적용 분야</Detail>
+              <DetailInfo>적용 분야</DetailInfo>
               <ProductText>
                 {area?.map((item) => (
                   <li>{item}</li>
@@ -94,4 +93,4 @@ function Skpi() {
   );
 }
 
-export default Skpi;
+export default Detail;
