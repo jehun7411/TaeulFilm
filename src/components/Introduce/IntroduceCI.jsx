@@ -6,7 +6,7 @@ import devlop from "../../asset/images/devlop.png";
 import cooperation from "../../asset/images/cooperation.png";
 
 const CiSection = styled.div`
-  padding-top: 50px;
+  padding: 50px 0 50px 0;
 `;
 const IconWrap = styled.div`
   display: flex;

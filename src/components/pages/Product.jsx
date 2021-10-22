@@ -1,39 +1,35 @@
 import React from "react";
 import styled from "styled-components";
-import skckonlongpi from "../../asset/images/skckolonpi.png";
 import Inner from "../atoms/Inner";
-const ProductLogo = styled.h1`
-  margin-top: 50px;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 1.875rem;
+import ProductItem from "../Product/ProductItem";
+import filmItem from "../../asset/filmItem/filmItem";
 
-  & a {
-    font-family: "Amita", cursive;
-    color: #212529;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-      1px 1px 0 #000;
-  }
-`;
-
-const ProductImage = styled.section`
-  width: 100%;
-  min-height: 308px;
-  position: relative;
-  background: url(${skckonlongpi}) no-repeat;
+const ProductInner = styled(Inner)`
+  width: 1000px;
+  padding-top: 60px;
 `;
 
 function Product() {
   return (
-    <div>
-      <Inner>
-        <ProductLogo>
-          <ProductImage></ProductImage>
-        </ProductLogo>
-      </Inner>
-    </div>
+    <Inner>
+      <ProductInner>
+        {filmItem.map((item) => {
+          const { image, no, subDetail, subTitle } = item;
+          const queryElement = { no };
+          const queryMatter = Object.entries(queryElement)
+            .map((e) => e.join("="))
+            .join("&");
+          return (
+            <ProductItem
+              imageLink={image}
+              no={queryMatter}
+              subTitle={subTitle}
+              subDetail={subDetail}
+            />
+          );
+        })}
+      </ProductInner>
+    </Inner>
   );
 }
 

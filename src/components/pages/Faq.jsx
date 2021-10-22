@@ -21,20 +21,18 @@ const InfoBar = styled.div`
 const InfoNumber = styled.p`
   text-align: left;
   position: absolute;
-  padding-top: 12px;
-  padding-bottom: 15px;
-  padding-left: 33px;
+  padding: 12px 0px 15px 33px;
 `;
 const Question = styled.p`
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 15px;
+  padding: 12px 0px 15px 0px;
 `;
 const EditButton = styled.button`
   margin-top: 10px;
   width: 9%;
   height: 40px;
   background-color: #dee2e6;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const FaqButtonWrap = styled.div`

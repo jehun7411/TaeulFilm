@@ -25,13 +25,18 @@ const TitleText = styled.p`
 const WriteTitleBox = styled.input`
   width: 41.6667%;
   height: 35px;
+  padding: 3px;
+  font-size: 16px;
 `;
 
-const WriteContentBox = styled.input`
+const WriteContentBox = styled.textarea`
   width: 95.8333%;
-  height: 800px;
+  height: 300px;
   margin-top: 20px;
   margin-left: 31px;
+  padding: 5px 0 0 5px;
+  font-size: 16px;
+  resize: vertical;
 `;
 
 const WriteContetWrap = styled.div`
@@ -43,6 +48,7 @@ const EditFinishButton = styled.button`
   width: 9%;
   height: 40px;
   background-color: #dee2e6;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 const EditFinishButtonWrap = styled.div`
   text-align: right;
