@@ -27,6 +27,7 @@ const WriteTitleBox = styled.input`
   height: 35px;
   padding: 3px;
   font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const WriteContentBox = styled.textarea`
@@ -36,7 +37,8 @@ const WriteContentBox = styled.textarea`
   margin-left: 31px;
   padding: 5px 0 0 5px;
   font-size: 16px;
-  resize: vertical;
+  resize: none;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const WriteContetWrap = styled.div`

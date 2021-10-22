@@ -9,11 +9,11 @@ const FilmWrap = styled.div`
   left: -120px;
 `;
 
-function Film() {
+function Film({ onColorChange }) {
   return (
     <FilmWrap>
       <FilmCase />
-      <FilmTape />
+      <FilmTape onColorChange={onColorChange} />
     </FilmWrap>
   );
 }
