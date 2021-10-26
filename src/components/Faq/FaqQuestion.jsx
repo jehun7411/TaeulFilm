@@ -1,45 +1,70 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
-import { faqList } from "./FaqList";
+import firebase, { firestore } from "../../util/api/fbInstance";
 const Number = styled.p`
   text-align: left;
   position: absolute;
   padding: 12px 0px 15px 43px;
-  /* padding-bottom: 15px;
-  padding-left: 33px; */
-  font-size: 1.125rem;
 `;
-// const NumberWrap = styled.div`
-//   width: 7.6667%;
-//   height: 51px;
-//   justify-content: center;
-//   display: flex;
-// `;
+
 const QuestionText = styled.p`
   text-align: center;
   padding: 12px 0px 15px 0px;
 `;
-// const QuestionTextWrap = styled.div`
-//   width: 100%;
-//   height: 51px;
-//   justify-content: center;
-//   display: flex;
-//   align-items: center;
-// `;
 
 const QuestionBox = styled.div`
   border-top: 1px solid #adb5bd;
 `;
 
 function FaqQuestion() {
-  for (let i = 0; i < 10; i++) {
-    return (
-      <QuestionBox>
-        <Number>{faqList[i].no}</Number>
-        <QuestionText>{faqList[i].Title}</QuestionText>
-      </QuestionBox>
-    );
-  }
-}
+  // const fetchData = async () => {
+  //   const tt = await firestore.collection("faq").get();
 
+  //   tt.forEach((doc) => console.log(doc.data()));
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, [fetchData]);
+
+  const [posts, setPosts] = useState([
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+    { Title: "", Content: "" },
+  ]);
+  useEffect(() => {
+    firestore.collection("faq").onSnapshot((snapshot) => {
+      const postArray = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setPosts(postArray);
+    });
+  }, []);
+  console.log(posts);
+
+  return (
+    <>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[0].Title}</QuestionText>
+      </QuestionBox>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[1].Title}</QuestionText>
+      </QuestionBox>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[2].Title}</QuestionText>
+      </QuestionBox>
+    </>
+  );
+}
 export default FaqQuestion;

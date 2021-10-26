@@ -70,9 +70,7 @@ function FaqPreviewPage() {
       </TitleWrap2>
       <ContentBox />
       <ListButtonWrap>
-        <Link to="/Faq">
-          <ListButton>목록</ListButton>
-        </Link>
+        <ListButton>목록</ListButton>
       </ListButtonWrap>
     </Inner>
   );

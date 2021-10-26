@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { firestore } from "../../util/api/fbInstance";
+import { Link } from "react-router-dom";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
@@ -63,27 +64,47 @@ function FaqEditPage() {
   //3. state에 있는 값을 firestore add안에 할당
   //4. 작성이 잘되었는지 firebase cloud firestore에 가서 확인 후 faq에서 출력
   console.log(firestore);
+
+  const [inputs, setInputs] = useState({
+    Title: "",
+    Content: "",
+  });
+
+  // const { Title, Content } = inputs;
+  const onChange = (e) => {
+    console.log(e.target.value);
+    const { value, name } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+    console.log(inputs);
+  };
+
   const fetchWrite = async () => {
-    await firestore.collection("faq").add({ list: "태을필름" });
+    await firestore.collection("faq").add(inputs);
   };
   const onSubmit = (e) => {
     e.preventDefault();
     fetchWrite();
     alert("작성 완료!");
+    console.log(inputs);
   };
   return (
     <Inner>
       <FaqTitle>FAQ</FaqTitle>
       <WriteTitleWrap>
         <TitleText>제목</TitleText>
-        <WriteTitleBox />
+        <WriteTitleBox name="Title" onChange={onChange} />
       </WriteTitleWrap>
       <WriteContetWrap>
         <TitleText>내용</TitleText>
-        <WriteContentBox />
+        <WriteContentBox name="Content" onChange={onChange} />
       </WriteContetWrap>
       <EditFinishButtonWrap>
-        <EditFinishButton onClick={onSubmit}>글작성</EditFinishButton>
+        <Link to="/Faq">
+          <EditFinishButton onClick={onSubmit}>글작성</EditFinishButton>
+        </Link>
       </EditFinishButtonWrap>
     </Inner>
   );

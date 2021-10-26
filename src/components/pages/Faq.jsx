@@ -64,16 +64,6 @@ const Arrow = styled.div`
   }}
 `;
 function Faq() {
-  const fetchData = async () => {
-    const tt = await firestore.collection("faq").get();
-
-    tt.forEach((doc) => console.log(doc.data()));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
   return (
     <Inner>
       <FaqSection>
