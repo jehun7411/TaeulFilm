@@ -119,13 +119,10 @@ function Header() {
     const { color } = targetColor[0];
     setCurrentColor(color);
   };
-
   const fliterPath = history.location.pathname.replace("/", "");
-
   useEffect(() => {
     setNavState({ ...navInit, [fliterPath]: true });
   }, []);
-
   return (
     <HeaderWrap>
       <HeaderInner>

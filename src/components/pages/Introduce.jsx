@@ -5,7 +5,6 @@ import introuduceImage from "../../asset/images/introuduce_image.png";
 import Inner from "../atoms/Inner";
 import SemiInner from "../atoms/SemiInner";
 import IntroduceCI from "../Introduce/IntroduceCI";
-
 const IntroduceLogo = styled.h1`
   margin-top: 50px;
   width: 100%;
@@ -15,7 +14,7 @@ const IntroduceLogo = styled.h1`
   font-size: 1.875rem;
 
   & a {
-    font-family: "Amita", cursive;
+    font-family: "Amita";
     color: #212529;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
@@ -56,6 +55,7 @@ const CeoTextWrap = styled.p`
   font-size: 0.9375rem;
   text-align: center;
 `;
+
 function Introduce() {
   return (
     <div>

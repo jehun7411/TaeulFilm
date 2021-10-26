@@ -2,7 +2,6 @@ import React from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import FaqQuestion from "../Faq";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
