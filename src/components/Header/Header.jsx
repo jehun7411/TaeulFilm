@@ -18,13 +18,16 @@ const HeaderLogo = styled.h1`
   line-height: 120px;
   text-align: center;
   font-size: 3.75rem;
-
-  & a {
+  ${({ themeColor }) => {
+    const [mainColor] = themeColor;
+    return css`
+    & a {
+    color: #${mainColor};
     font-family: "Amita", cursive;
-    color: #212529;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-      1px 1px 0 #000;
-  }
+    text-shadow: -1px -1px 0 #${mainColor}, 1px -1px 0 #${mainColor}, -1px 1px 0 #${mainColor},
+      1px 1px 0 #${mainColor};
+  `;
+  }}
 `;
 
 const HeaderGnb = styled.ul`
@@ -126,8 +129,16 @@ function Header() {
   return (
     <HeaderWrap>
       <HeaderInner>
-        <Film onColorChange={onColorChange} />
-        <HeaderLogo onClick={onClick}>
+        <Film
+          onColorChange={onColorChange}
+          navState={navState}
+          themeColor={currentColor}
+        />
+        <HeaderLogo
+          onClick={onClick}
+          navState={navState}
+          themeColor={currentColor}
+        >
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
