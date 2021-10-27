@@ -37,7 +37,7 @@ const ProductName = styled.p`
 `;
 const ProductDetail = styled.p`
   line-height: 1.1875rem;
-  font-size: 0.65rem;
+  font-size: 0.8125rem;
 `;
 const ProductDetailWrap = styled.div`
   width: 50%;
