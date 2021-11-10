@@ -64,6 +64,18 @@ function FaqQuestion() {
         <Number>1</Number>
         <QuestionText>{posts[2].Title}</QuestionText>
       </QuestionBox>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[3].Title}</QuestionText>
+      </QuestionBox>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[4].Title}</QuestionText>
+      </QuestionBox>
+      <QuestionBox>
+        <Number>1</Number>
+        <QuestionText>{posts[5].Title}</QuestionText>
+      </QuestionBox>
     </>
   );
 }
