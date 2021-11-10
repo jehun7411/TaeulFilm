@@ -46,7 +46,7 @@ const BannerLogo = styled.strong`
   font-weight: bold;
   font-size: 1.0625rem;
 `;
-
+/*테스트*/
 function Main() {
   console.log("main");
   return (
