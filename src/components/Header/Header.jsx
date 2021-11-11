@@ -100,7 +100,7 @@ const HeaderItem = styled.li`
   }}
 `;
 
-function Header() {
+function Header({ color, setColor }) {
   const history = useHistory();
   const navInit = {
     home: false,
@@ -110,7 +110,7 @@ function Header() {
     faq: false,
   };
   const [navState, setNavState] = useState(navInit);
-  const [currentColor, setCurrentColor] = useState(["343a40", "868e96"]);
+  // const [currentColor, setCurrentColor] = useState(["343a40", "868e96"]);
   const onClick = (present) =>
     setNavState(() => ({ ...navInit, [present]: true }));
 
@@ -120,7 +120,7 @@ function Header() {
       (value) => value.no === Number(currentIndex)
     );
     const { color } = targetColor[0];
-    setCurrentColor(color);
+    setColor(color);
   };
   const fliterPath = history.location.pathname.replace("/", "");
   useEffect(() => {
@@ -132,48 +132,44 @@ function Header() {
         <Film
           onColorChange={onColorChange}
           navState={navState}
-          themeColor={currentColor}
+          themeColor={color}
         />
-        <HeaderLogo
-          onClick={onClick}
-          navState={navState}
-          themeColor={currentColor}
-        >
+        <HeaderLogo onClick={onClick} navState={navState} themeColor={color}>
           <Link to="/">Taeul Film</Link>
         </HeaderLogo>
         <HeaderGnb>
           <HeaderItem
             onClick={() => onClick()}
             navState={navState}
-            themeColor={currentColor}
+            themeColor={color}
           >
             <Link to="/">홈</Link>
           </HeaderItem>
           <HeaderItem
             onClick={() => onClick("introduce")}
             navState={navState}
-            themeColor={currentColor}
+            themeColor={color}
           >
             <Link to="/introduce">회사 소개</Link>
           </HeaderItem>
           <HeaderItem
             onClick={() => onClick("product")}
             navState={navState}
-            themeColor={currentColor}
+            themeColor={color}
           >
             <Link to="/product">제품 소개</Link>
           </HeaderItem>
           <HeaderItem
             onClick={() => onClick("business")}
             navState={navState}
-            themeColor={currentColor}
+            themeColor={color}
           >
             <Link to="/business">사업 영역</Link>
           </HeaderItem>
           <HeaderItem
             onClick={() => onClick("faq")}
             navState={navState}
-            themeColor={currentColor}
+            themeColor={color}
           >
             <Link to="/faq">FAQ</Link>
           </HeaderItem>

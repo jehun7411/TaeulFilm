@@ -56,7 +56,7 @@ const CeoTextWrap = styled.p`
   text-align: center;
 `;
 
-function Introduce() {
+function Introduce({ theme }) {
   return (
     <div>
       <Inner>
@@ -96,7 +96,7 @@ function Introduce() {
               <CeoTextWrap>대표 오홍백</CeoTextWrap>
             </IntroduceTextWrap>
           </IntroduceWrap>
-          <IntroduceCI />
+          <IntroduceCI theme={theme} />
         </SemiInner>
       </Inner>
     </div>

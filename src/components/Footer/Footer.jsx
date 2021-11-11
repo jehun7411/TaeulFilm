@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Inner from "../atoms/Inner";
 
 const FooterOuter = styled(Inner)`
@@ -26,9 +26,12 @@ const FooterLogo = styled.h2`
   line-height: 3.625rem;
   font-size: 1.875rem;
   font-family: "Amita", cursive;
-  color: #212529;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  ${({ theme }) =>
+    css`
+      color: #${theme[0]};
+      text-shadow: -1px -1px 0 #${theme[0]}, 1px -1px 0 #${theme[0]},
+        -1px 1px 0 #${theme[0]}, 1px 1px 0 #${theme[0]};
+    `}
 `;
 const FooterTextWrap = styled.footer`
   width: 100%;
@@ -40,12 +43,12 @@ const FooterText = styled.p`
   color: #000000;
   line-height: 1rem;
 `;
-function Footer() {
+function Footer({ theme }) {
   return (
     <FooterTextWrap>
       <FooterOuter>
         <FooterInner>
-          <FooterLogo>Taeul Film</FooterLogo>
+          <FooterLogo theme={theme}>Taeul Film</FooterLogo>
           <FooterInfo>
             <FooterText>
               태을필름 / 주소 : 경기도 군포시 번영로 505 1142-2 대우 디오플러스

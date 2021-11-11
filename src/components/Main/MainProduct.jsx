@@ -42,10 +42,10 @@ const ProductName = styled.span`
   font-size: 1.25rem;
 `;
 
-function MainProduct() {
+function MainProduct({ theme }) {
   return (
     <InnerSection>
-      <Title>제품</Title>
+      <Title theme={theme}>제품</Title>
       <ProductWrap>
         <ProductBoxWrap>
           <ProductBox number={1} />

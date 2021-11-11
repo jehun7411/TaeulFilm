@@ -46,8 +46,8 @@ const BannerLogo = styled.strong`
   font-weight: bold;
   font-size: 1.0625rem;
 `;
-/*테스트*/
-function Main() {
+
+function Main({ theme }) {
   console.log("main");
   return (
     <div>
@@ -61,8 +61,8 @@ function Main() {
             <BannerText>최상의 필름을 제공할 것을 약속드립니다</BannerText>
           </BannerTextWrap>
         </Banner>
-        <MainProduct />
-        <MainMap />
+        <MainProduct theme={theme} />
+        <MainMap theme={theme} />
       </Inner>
     </div>
   );
