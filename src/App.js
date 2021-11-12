@@ -16,7 +16,8 @@ function App() {
   const [currentColor, setCurrentColor] = useState([
     "343a40",
     "868e96",
-    "ffffff",
+    "dee2e6",
+    "000000",
   ]);
   return (
     <div>

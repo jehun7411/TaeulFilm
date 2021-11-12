@@ -24,8 +24,8 @@ const Title = styled.div`
   line-height: 50px;
   ${({ theme }) =>
     css`
-      background-color: #${theme[0]};
-      color: #${theme[2]};
+      background-color: #${theme[2]};
+      color: #${theme[3]};
     `}
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 `;
