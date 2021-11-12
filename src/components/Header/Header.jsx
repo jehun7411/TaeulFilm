@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { filmColor } from "../../asset/filmColor/filmColor";
+import { filmColor } from "../../asset/FilmColor/filmColor";
 import Inner from "../atoms/Inner";
 import { Film } from "../Film";
 
