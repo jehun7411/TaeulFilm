@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { filmColor } from "../../asset/filmColor/filmColor";
+import { filmColor } from "../../asset/FilmColor/filmColor";
 
 const FilmTapeList = styled.ul`
   margin-top: 3px;
