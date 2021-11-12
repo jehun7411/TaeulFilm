@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, history } from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { firestore } from "../../util/api/fbInstance";
@@ -88,6 +88,7 @@ function FaqEditPage() {
     e.preventDefault();
     fetchWrite();
     alert("작성 완료!");
+    history.push("/faq");
     console.log(inputs);
   };
   return (
