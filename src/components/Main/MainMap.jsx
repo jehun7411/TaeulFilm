@@ -28,10 +28,10 @@ const MapInfoText = styled.p`
   text-align: center;
 `;
 
-function MainMap() {
+function MainMap({ theme }) {
   return (
     <InnerSection>
-      <Title>회사 약도</Title>
+      <Title theme={theme}>회사 약도</Title>
       <MapWrap>
         <KakaoMap>
           <Location />

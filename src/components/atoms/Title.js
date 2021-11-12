@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Title = styled.div`
   width: 230px;
@@ -8,7 +8,12 @@ const Title = styled.div`
   font-weight: 700;
   text-align: center;
   line-height: 50px;
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
+  ${({ theme }) =>
+    css`
+      background-color: #${theme[2]};
+      color: #${theme[3]};
+    `}
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 `;
 

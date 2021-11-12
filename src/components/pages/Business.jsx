@@ -43,12 +43,12 @@ const BusinessText = styled.p`
   }
 `;
 
-function Business() {
+function Business({ theme }) {
   return (
     <Inner>
       <SemiInner>
         <BusinessSection>
-          <Title>사업 영역</Title>
+          <Title theme={theme}>사업 영역</Title>
         </BusinessSection>
         <BusinessSection>
           <BusinessImgWrap>
@@ -75,7 +75,7 @@ function Business() {
             </BusinessText>
           </BusinessTextWrap>
         </BusinessSection>
-        <Title>PI 필름 전망</Title>
+        <Title theme={theme}>PI 필름 전망</Title>
         <BusinessImgWrap2>
           <BusinessImage src={PIfilmStatistics} alt="PIfilmStatistics" />
         </BusinessImgWrap2>

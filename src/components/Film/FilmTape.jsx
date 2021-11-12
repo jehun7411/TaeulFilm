@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { filmColor } from "../../asset/filmColor/filmColor";
 
 const FilmTapeList = styled.ul`

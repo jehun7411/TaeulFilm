@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import queryString from "query-string";
@@ -22,7 +22,11 @@ const Title = styled.div`
   font-weight: 700;
   text-align: center;
   line-height: 50px;
-  background-color: #e9ecef;
+  ${({ theme }) =>
+    css`
+      background-color: #${theme[2]};
+      color: #${theme[3]};
+    `}
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 `;
 
@@ -64,7 +68,7 @@ const TextWrap = styled.div`
   margin-top: 61px;
 `;
 
-function Detail() {
+function Detail({ theme }) {
   const history = useHistory();
   const { search } = history.location;
   const query = queryString.parse(search);
@@ -74,7 +78,7 @@ function Detail() {
     <Inner>
       <FilmSemiInner>
         <ProTitleGap>
-          <Title>{subTitle}</Title>
+          <Title theme={theme}>{subTitle}</Title>
         </ProTitleGap>
         <ProPictureGap>
           <ProductImgWrap>
