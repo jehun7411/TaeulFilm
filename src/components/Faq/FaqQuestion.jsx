@@ -41,7 +41,6 @@ function FaqQuestion() {
 
   return (
     <>
-      (
       {posts.map((el) => (
         <QuestionBox>
           <Number>1</Number>
