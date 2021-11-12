@@ -2,7 +2,6 @@ import React, { useState, history } from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { firestore } from "../../util/api/fbInstance";
-import { Link } from "react-router-dom";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
@@ -57,7 +56,7 @@ const EditFinishButton = styled.button`
 const EditFinishButtonWrap = styled.div`
   text-align: right;
 `;
-function FaqEditPage() {
+function FaqEditPage({ history }) {
   //힌트 useState or useReducer + onChnage(내장) or onSubmit(커스텀)이용
   //1. useReducer or useState로 상태관리할 것을 만듬( 타입은 원하는거 )
   //2. onSubmit이 될때! WriteTitleBox, WriteCOntentBox에 있는 값을 State에 저장
@@ -78,7 +77,6 @@ function FaqEditPage() {
       ...inputs,
       [name]: value,
     });
-    console.log(inputs);
   };
 
   const fetchWrite = async () => {
@@ -88,8 +86,7 @@ function FaqEditPage() {
     e.preventDefault();
     fetchWrite();
     alert("작성 완료!");
-    history.push("/faq");
-    console.log(inputs);
+    history.push("/Faq");
   };
   return (
     <Inner>
@@ -103,9 +100,7 @@ function FaqEditPage() {
         <WriteContentBox name="Content" onChange={onChange} />
       </WriteContetWrap>
       <EditFinishButtonWrap>
-        <Link to="/Faq">
-          <EditFinishButton onClick={onSubmit}>글작성</EditFinishButton>
-        </Link>
+        <EditFinishButton onClick={onSubmit}>글작성</EditFinishButton>
       </EditFinishButtonWrap>
     </Inner>
   );
