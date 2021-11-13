@@ -14,7 +14,6 @@ import {
   Detail,
 } from "./components/pages";
 function App() {
-  console.log(firebase, firestore);
   return (
     <div>
       <Header />

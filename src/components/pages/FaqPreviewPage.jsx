@@ -2,7 +2,7 @@ import React from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import FaqQuestion from "../Faq";
+import posts from "../Faq/FaqQuestion";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
@@ -58,12 +58,13 @@ const ListButtonWrap = styled.div`
 `;
 
 function FaqPreviewPage() {
+  console.log(posts);
   return (
     <Inner>
       <FaqTitle>FAQ</FaqTitle>
       <TitleWrap>
         <TitleText>제목</TitleText>
-        <TitleContent>태을필름 입사 지원방법</TitleContent>
+        <TitleContent></TitleContent>
       </TitleWrap>
       <TitleWrap2>
         <TitleText2>내용</TitleText2>

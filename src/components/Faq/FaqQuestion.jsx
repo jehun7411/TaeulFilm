@@ -1,11 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import firebase, { firestore } from "../../util/api/fbInstance";
-const Number = styled.p`
-  text-align: left;
-  position: absolute;
-  padding: 12px 0px 15px 43px;
-`;
 
 const QuestionText = styled.p`
   text-align: center;
@@ -17,16 +12,6 @@ const QuestionBox = styled.div`
 `;
 
 function FaqQuestion() {
-  // const fetchData = async () => {
-  //   const tt = await firestore.collection("faq").get();
-
-  //   tt.forEach((doc) => console.log(doc.data()));
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [fetchData]);
-
   const [posts, setPosts] = useState([{ Title: "", Content: "" }]);
   useEffect(() => {
     firestore.collection("faq").onSnapshot((snapshot) => {
@@ -37,7 +22,6 @@ function FaqQuestion() {
       setPosts(postArray);
     });
   }, []);
-  console.log(posts);
 
   return (
     <>
