@@ -43,7 +43,6 @@ function FaqQuestion() {
     <>
       {posts.map((el) => (
         <QuestionBox>
-          <Number>1</Number>
           <QuestionText>{el.Title}</QuestionText>
         </QuestionBox>
       ))}

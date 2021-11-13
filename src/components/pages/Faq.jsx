@@ -69,7 +69,7 @@ function Faq() {
       <FaqSection>
         <FaqTitle>FAQ</FaqTitle>
         <InfoBar>
-          <InfoNumber>번호</InfoNumber> <Question>질문</Question>
+          <Question>질문</Question>
         </InfoBar>
         <Link to="/FaqPreviewPage">
           <FaqQuestion />
