@@ -72,7 +72,9 @@ function ProductItem({ imageLink, no, subTitle, subDetail }) {
                 </ProductTextWrap>
               </ProductDetailWrap>
               <ListImgWrap>
-                <ProductImg src={imageLink} alt="ProductImg" />
+                <Link to="/faq">
+                  <ProductImg src={imageLink} alt="ProductImg" />
+                </Link>
               </ListImgWrap>
             </>
           )}
