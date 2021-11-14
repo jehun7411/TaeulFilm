@@ -20,11 +20,7 @@ const InfoBar = styled.div`
   margin-top: 10px;
   border-top: 2px solid #212529;
 `;
-const InfoNumber = styled.p`
-  text-align: left;
-  position: absolute;
-  padding: 12px 0px 15px 33px;
-`;
+
 const Question = styled.p`
   text-align: center;
   padding: 12px 0px 15px 0px;
@@ -63,7 +59,8 @@ const Arrow = styled.div`
         `;
   }}
 `;
-function Faq() {
+function Faq({ posts, setPosts }) {
+  console.log(posts);
   return (
     <Inner>
       <FaqSection>
@@ -71,9 +68,22 @@ function Faq() {
         <InfoBar>
           <Question>질문</Question>
         </InfoBar>
-        <Link to="/FaqPreviewPage">
-          <FaqQuestion />
-        </Link>
+        {posts.map((item) => {
+          const { id, Title, Content } = item;
+          const queryElement = { id };
+          const queryMatter = Object.entries(queryElement)
+            .map((e) => e.join("="))
+            .join("&");
+          return (
+            <FaqQuestion
+              posts={posts}
+              setPosts={setPosts}
+              id={queryMatter}
+              Title={Title}
+              Content={Content}
+            />
+          );
+        })}
       </FaqSection>
 
       <PageNumberWrap>

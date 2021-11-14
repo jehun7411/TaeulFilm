@@ -1,8 +1,9 @@
 import React from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import posts from "../Faq/FaqQuestion";
+import queryString from "query-string";
 
 const FaqTitle = styled.p`
   margin-top: 50px;
@@ -57,19 +58,25 @@ const ListButtonWrap = styled.div`
   text-align: center;
 `;
 
-function FaqPreviewPage() {
+function FaqPreviewPage({ posts }) {
   console.log(posts);
+  const history = useHistory();
+  const { search } = history.location;
+  const query = queryString.parse(search);
+  const faqState = posts.filter((item) => item.id === Number(query.id));
+  const { Title, Content } = faqState[0];
+
   return (
     <Inner>
       <FaqTitle>FAQ</FaqTitle>
       <TitleWrap>
         <TitleText>제목</TitleText>
-        <TitleContent></TitleContent>
+        <TitleContent>{Title?.map((item) => ({ item }))}</TitleContent>
       </TitleWrap>
       <TitleWrap2>
         <TitleText2>내용</TitleText2>
       </TitleWrap2>
-      <ContentBox />
+      <ContentBox>{Content?.map((item) => ({ item }))}</ContentBox>
       <ListButtonWrap>
         <Link to="/faq">
           <ListButton>목록</ListButton>
