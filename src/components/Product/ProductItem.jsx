@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProductImg from "../atoms/ProductImg";
-import filmItem from "../../asset/filmItem/filmItem";
 
 const ListImgWrap = styled.div`
   width: 50%;
@@ -38,6 +37,7 @@ const ProductName = styled.p`
 `;
 const ProductDetail = styled.p`
   line-height: 1.1875rem;
+  font-size: 0.8125rem;
 `;
 const ProductDetailWrap = styled.div`
   width: 50%;

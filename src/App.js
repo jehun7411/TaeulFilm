@@ -24,24 +24,49 @@ function App() {
       setPosts(postArray);
     });
   }, []);
+
+  const [currentColor, setCurrentColor] = useState([
+    "343a40",
+    "868e96",
+    "dee2e6",
+    "000000",
+  ]);
+
   return (
     <div>
-      <Header />
+      <Header color={currentColor} setColor={setCurrentColor} />
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/business" component={Business} />
+
+       
         <Route
           exact
           path="/faq"
           render={() => <Faq posts={posts} setPosts={setPosts} />}
         />
+
+        <Route exact path="/" render={() => <Main theme={currentColor} />} />
+        <Route
+          exact
+          path="/business"
+          render={() => <Business theme={currentColor} />}
+        />
+    
+
         <Route exact path="/Faqeditpage" component={FaqEditPage} />
-        <Route exact path="/introduce" component={Introduce} />
-        <Route exact path="/product" component={Product} />
+        <Route
+          exact
+          path="/introduce"
+          render={() => <Introduce theme={currentColor} />}
+        />
+        <Route exact path="/product" component={Product} />} />
         <Route exact path="/FaqPreviewPage" component={FaqPreviewPage} />
-        <Route exact path="/detail" component={Detail} />
+        <Route
+          exact
+          path="/detail"
+          render={() => <Detail theme={currentColor} />}
+        />
       </Switch>
-      <Footer />
+      <Footer theme={currentColor} />
     </div>
   );
 }

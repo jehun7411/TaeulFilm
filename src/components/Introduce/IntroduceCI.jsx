@@ -62,10 +62,10 @@ const CiText2 = styled.p`
   font-size: 0.875rem;
 `;
 
-function IntroduceCI() {
+function IntroduceCI({ theme }) {
   return (
     <CiSection>
-      <Title>경영 이념</Title>
+      <Title theme={theme}>경영 이념</Title>
       <IconWrap>
         <CiIconWrap>
           <CiIconImage number={1} />
