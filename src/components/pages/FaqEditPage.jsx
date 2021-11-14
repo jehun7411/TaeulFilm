@@ -1,4 +1,4 @@
-import React, { useState, history } from "react";
+import React, { useState } from "react";
 import Inner from "../atoms/Inner";
 import styled from "styled-components";
 import { firestore } from "../../util/api/fbInstance";

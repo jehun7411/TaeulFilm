@@ -1,11 +1,10 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import Inner from "../atoms/Inner";
 import { Link } from "react-router-dom";
 import FaqQuestion from "../Faq/FaqQuestion";
 import LeftArrow from "../../asset/images/LeftArrow.png";
 import RightArrow from "../../asset/images/RightArrow.png";
-import firebase, { firestore } from "../../util/api/fbInstance";
 
 const FaqSection = styled.div`
   margin-top: 50px;
