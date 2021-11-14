@@ -79,7 +79,7 @@ function Faq({ posts, setPosts }) {
               posts={posts}
               setPosts={setPosts}
               id={queryMatter}
-              Title={Title}
+              title={Title}
               Content={Content}
             />
           );

@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import firebase, { firestore } from "../../util/api/fbInstance";
 
 const QuestionText = styled.p`
   text-align: center;
@@ -12,25 +11,13 @@ const QuestionBox = styled.div`
   border-top: 1px solid #adb5bd;
 `;
 
-function FaqQuestion({ posts, setPosts, id }) {
-  useEffect(() => {
-    firestore.collection("faq").onSnapshot((snapshot) => {
-      const postArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setPosts(postArray);
-    });
-  }, []);
-
+function FaqQuestion({ id, title }) {
   return (
     <>
       <Link to={{ pathname: "/FaqPreviewPage", search: id }}>
-        {posts.map((el) => (
-          <QuestionBox>
-            <QuestionText>{el.Title}</QuestionText>
-          </QuestionBox>
-        ))}
+        <QuestionBox>
+          <QuestionText>{title}</QuestionText>
+        </QuestionBox>
       </Link>
     </>
   );
