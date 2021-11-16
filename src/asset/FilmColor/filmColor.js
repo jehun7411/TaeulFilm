@@ -25,7 +25,7 @@ export const filmColor = [
   },
   {
     no: 7,
-    // color: ["0b7285", "1098ad", "0c8599", "ffffff"],
-    color: ["d9480f", "1098ad", "f76707", "ffffff"],
+    color: ["0b7285", "1098ad", "0c8599", "ffffff"],
+    
   },
 ];
